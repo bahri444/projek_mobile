@@ -15,15 +15,17 @@ class DetailBerita : AppCompatActivity() {
         // fungsi untuk menerima data intent yang dikirim
         val dataIntent = intent.getParcelableExtra<Berita>("testing")
         //inisiasi view
+        val images = findViewById<ImageView>(R.id.detailThumbnail)
         val title = findViewById<TextView>(R.id.textJudulBerita)
         val description = findViewById<TextView>(R.id.textDeskripsiBerita)
         val linkberita = findViewById<TextView>(R.id.textLinkBerita)
         val tanggalberita = findViewById<TextView>(R.id.textDateBerita)
 
         //tampilkan gambar menggunakan glid
-//        Glide.with(this)
-//            .load(dataIntent?.photo)
-//            .into(image)
+        Glide.with(this)
+            .load(dataIntent?.thumbnail)
+            .into(images)
+
         // tampilkan text untuk judul
         title.text = dataIntent?.title
         //tampilkan text untuk deskripsi

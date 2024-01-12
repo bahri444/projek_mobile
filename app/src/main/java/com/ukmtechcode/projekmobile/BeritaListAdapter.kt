@@ -15,11 +15,11 @@ class BeritaListAdapter(private val listBerita:List<Berita>): RecyclerView.Adapt
         return ListViewHolder(view)
     }
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (link, title, description, date) = listBerita[position]
+        val (link, title, description, date,thumbnail) = listBerita[position]
 
-//        Glide.with(holder.itemView.context)
-//            .load(photo) // URL Gambar
-//            .into(holder.imgPhoto)
+        Glide.with(holder.itemView.context)
+            .load(thumbnail) // URL Gambar
+            .into(holder.thumbnailFoto)
 
         holder.tvJudulBerita.text = title
         holder.tvDescriptionBerita.text = description
@@ -34,7 +34,7 @@ class BeritaListAdapter(private val listBerita:List<Berita>): RecyclerView.Adapt
     override fun getItemCount(): Int = listBerita.size
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val imgPhoto: ImageView = itemView.findViewById(R.id.)
+        val thumbnailFoto: ImageView = itemView.findViewById(R.id.img_thumbnail)
         val tvJudulBerita: TextView = itemView.findViewById(R.id.tv_judul_berita)
         val tvDescriptionBerita: TextView = itemView.findViewById(R.id.tv_deskripsi_berita)
         val tvLinkBerita: TextView = itemView.findViewById(R.id.tv_link_berita)

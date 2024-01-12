@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardViewBerita"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -15,55 +15,71 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/img_thumbnail"
+            android:layout_width="80dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="0dp"
+            android:scaleType="centerCrop"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.0"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/tv_judul_berita"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Judul berita"
-            android:textAlignment="center"
+            android:layout_marginStart="0dp"
+            android:layout_toEndOf="@id/img_thumbnail"
             android:textColor="#b71c1c"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            card_view:layout_constraintStart_toEndOf="@+id/img_thumbnail"
+            card_view:layout_constraintTop_toTopOf="@+id/img_thumbnail"
+            tools:layout_editor_absoluteY="12dp"
+            tools:text="Judul berita" />
+
+        <TextView
+            android:id="@+id/tv_link_berita"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_thumbnail"
+            android:text="Link berita"
+            android:textColor="#2962ff"
+            android:paddingLeft="5dp"
+            card_view:layout_constraintEnd_toEndOf="@+id/tv_judul_berita"
+            card_view:layout_constraintHorizontal_bias="0.493"
+            card_view:layout_constraintStart_toEndOf="@+id/img_thumbnail"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_judul_berita" />
 
         <TextView
             android:id="@+id/tv_deskripsi_berita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Deskripsi berita"
-            android:paddingHorizontal="5dp"
+            android:ellipsize="end"
+            android:maxLines="4"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_judul_berita" />
-
-        <TextView
-            android:id="@+id/tv_link_berita"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Link berita"
-            android:textColor="#2962ff"
-            android:paddingHorizontal="5dp"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/tv_deskripsi_berita" />
+            card_view:layout_constraintTop_toBottomOf="@+id/img_thumbnail"
+            tools:text="Deskripsi berita" />
 
         <TextView
             android:id="@+id/tv_date_berita"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:paddingHorizontal="5dp"
             android:text="date berita"
             android:textColor="#212121"
-            android:paddingHorizontal="5dp"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintHorizontal_bias="0.0"
-            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintEnd_toEndOf="@+id/tv_link_berita"
+            card_view:layout_constraintStart_toEndOf="@+id/img_thumbnail"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_link_berita" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -11,9 +11,12 @@ data class Berita(
     @SerializedName("title")
     val title: String,
 
+    @SerializedName("description")
+    val description: String,
+
     @SerializedName("pubDate")
     val pubDate: String,
 
-    @SerializedName("description")
-    val description: String,
+    @SerializedName("thumbnail")
+    val thumbnail: String,
 ):Parcelable
