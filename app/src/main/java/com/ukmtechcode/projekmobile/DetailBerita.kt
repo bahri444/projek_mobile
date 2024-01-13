@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.ukmtechcode.projekmobile.R
 
 class DetailBerita : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_berita)
+        setContentView(R.layout.activity_deskripsi)
 
         // fungsi untuk menerima data intent yang dikirim
         val dataIntent = intent.getParcelableExtra<Berita>("testing")

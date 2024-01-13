@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 class BeritaListAdapter(private val listBerita:List<Berita>): RecyclerView.Adapter<BeritaListAdapter.ListViewHolder>(){
     var clickListener : BeritaClickListenerRv? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.berita_rows, parent, false)
+        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.list_news, parent, false)
         return ListViewHolder(view)
     }
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
