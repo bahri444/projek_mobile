@@ -13,7 +13,7 @@
         android:text="BERITA"
         android:textSize="25dp"
         android:textAlignment="center"
-        android:textColor="#b71c1c"
+        android:textColor="#0d47a1"
         android:paddingVertical="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

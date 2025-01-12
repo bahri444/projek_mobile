@@ -36,23 +36,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_toEndOf="@id/img_thumbnail"
-            android:textColor="#b71c1c"
+            android:textColor="#212121"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:maxLines="1"
             android:paddingLeft="5dp"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/img_thumbnail"
             card_view:layout_constraintTop_toTopOf="@+id/img_thumbnail"
             tools:layout_editor_absoluteY="12dp"
-            tools:text="Judul berita" />
+            tools:text="Title" />
 
         <TextView
             android:id="@+id/tv_link_berita"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/img_thumbnail"
-            android:text="Link berita"
+            android:text="Link"
             android:textColor="#2962ff"
+            android:maxLines="2"
             android:paddingLeft="5dp"
             card_view:layout_constraintEnd_toEndOf="@+id/tv_judul_berita"
             card_view:layout_constraintHorizontal_bias="0.493"
@@ -64,22 +66,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:maxLines="4"
+            android:maxLines="3"
+            android:textColor="#263238"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/img_thumbnail"
-            tools:text="Deskripsi berita" />
+            tools:text="Deskripsi" />
 
         <TextView
             android:id="@+id/tv_date_berita"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:paddingHorizontal="5dp"
-            android:text="date berita"
-            android:textColor="#212121"
+            android:text="date"
+            android:textColor="#263238"
             card_view:layout_constraintEnd_toEndOf="@+id/tv_link_berita"
             card_view:layout_constraintStart_toEndOf="@+id/img_thumbnail"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_link_berita" />
+
+        <ImageView
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_share"
+            card_view:layout_constraintBottom_toTopOf="@+id/tv_deskripsi_berita"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.986"
+            card_view:layout_constraintStart_toEndOf="@+id/img_thumbnail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
